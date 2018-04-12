@@ -15,15 +15,19 @@ if (!window.console) {
   </script>
   <script src="../lib/datainput.js"></script>
   <script src="assets/index.js"></script>
-  <title>datainput</title>
+  <title>DataInput - Formatted Data Input Library in JavaScript</title>
 </head>
 <body>
-  <input type="text" placeholder="input:text" />
-  <span id="dataIn1"></span>
-  <span id="dataIn2"></span>
-  <span id="dataIn3"></span>
-  <span id="dataIn4"></span>
-  <span id="dataIn5"></span>
-  <input type="text" placeholder="input:text" />
+  <h1>DataInput</h1>
+  <table>
+    <tr><td class="header"></td><td><input type="text" placeholder="input:text" /></td></tr>
+    <tr><td class="header">Zip (Postal) Code</td><td><span id="dataIn1"></span></td></tr>
+    <tr><td class="header">Date</td><td><span id="dataIn2"></span></td></tr>
+    <tr><td class="header">Date(ja)</td><td><span id="dataIn3"></span></td></tr>
+    <tr><td class="header">Card Number</td><td><span id="dataIn4"></span></td></tr>
+    <tr><td class="header">Some Code(Alp/Num)</td><td><span id="dataIn5"></span></td></tr>
+    <tr><td class="header"></td><td><input type="text" placeholder="input:text" /></td>
+  </table>
+
 </body>
 </html>

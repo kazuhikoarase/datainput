@@ -1,5 +1,6 @@
 
 .datainput-mono {
+  /* font-family must be monospace */
   font-family : "ＭＳ ゴシック", monospace;
 }
 

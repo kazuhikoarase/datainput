@@ -1,4 +1,8 @@
 
-* {
-  font-size: 30px;
+TD {
+  font-size: 16pt;
+}
+
+TD.header {
+  text-align : right;
 }
