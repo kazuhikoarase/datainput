@@ -1,0 +1,28 @@
+{
+  "name": "datainput",
+  "version": "0.0.1",
+  "description": "Formatted Data Input Library in JavaScript.",
+  "author": "Kazuhiko Arase",
+  "main": "lib/datainput.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kazuhikoarase/datainput.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kazuhikoarase/datainput/issues"
+  },
+  "keywords": [ "data", "input", "format",
+    "zip", "postal", "telephone", "library" ],
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.0.0",
+    "del": "^3.0.0",
+    "run-sequence": "^2.0.0",
+    "gulp-order": "^1.0.0",
+    "gulp-concat": "^2.0.0",
+    "gulp-rename": "^1.0.0",
+    "gulp-jasmine": "^2.0.0",
+    "gulp-uglify": "^3.0.0",
+    "uglify": "^0.1.5"
+  }
+}
