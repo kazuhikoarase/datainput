@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=9" />
-<link rel="stylesheet" href="../lib/datainput.css" type="text/css" />
-<link rel="stylesheet" href="assets/index.css" type="text/css" />
+<link rel="stylesheet" href="../lib/datainput.css" />
+<link rel="stylesheet" href="assets/index.css" />
 <script src="../lib/datainput.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="../lib/vue-datainput.js"></script>
@@ -17,21 +17,33 @@
 
 <table>
   <tr><td class="header"></td><td><input type="text" placeholder="input:text" /></td></tr>
+
   <tr><td class="header">Zip (Postal) Code</td>
-    <td><datainput ref="zipCodeIn" format="00000"></datainput></td></tr>
+    <td><datainput format="00000" v-model="zipCodeIn" ></datainput></td>
+    <td>{{JSON.stringify(zipCodeIn)}}</td></tr>
+
   <tr><td class="header">Date</td>
-    <td><datainput ref="dateIn1" format="0000/00/00" text-align="right"></datainput></td></tr>
+    <td><datainput format="0000/00/00" text-align="right" v-model="dateIn1" ></datainput></td>
+    <td>{{JSON.stringify(dateIn1)}}</td></tr>
+
   <tr><td class="header">Date(20XX)</td>
-    <td><datainput ref="dateIn2" format="2099/99/99" text-align="right"
-          section-re="9+" section-input-re="\d+">></datainput></td></tr>
+    <td><datainput format="2099/99/99" text-align="right" section-re="9+" section-input-re="\d+"
+          v-model="dateIn2" >></datainput></td>
+    <td>{{JSON.stringify(dateIn2)}}</td></tr>
+
   <tr><td class="header">Date(ja)</td>
-    <td><datainput ref="dateInJa" format="0000年00月00日" text-align="right"
-          :num-chars-in-monospace="{ 年:2,月:2,日:2 }" ></datainput></td></tr>
+    <td><datainput format="0000年00月00日" text-align="right" :num-chars-in-monospace="{ 年:2,月:2,日:2 }"
+          v-model="dateInJa" ></datainput></td>
+    <td>{{JSON.stringify(dateInJa)}}</td></tr>
+
   <tr><td class="header">Card Number</td>
-    <td><datainput ref="cardNoIn" format="0000-0000-0000-0000"></datainput></td></tr>
+    <td><datainput format="0000-0000-0000-0000" v-model="cardNoIn" ></datainput></td>
+    <td>{{JSON.stringify(cardNoIn)}}</td></tr>
+
   <tr><td class="header">Some Code(Alp|Num)</td>
-    <td><datainput ref="someCodeIn" format="00-0-00-000"
-          section-re="\w+"></datainput></td></tr>
+    <td><datainput format="00-0-00-000" section-re="\w+" v-model="someCodeIn" ></datainput></td>
+    <td>{{JSON.stringify(someCodeIn)}}</td></tr>
+
   <tr><td class="header"></td><td><input type="text" placeholder="input:text" /></td>
 </table>
 
@@ -40,9 +52,15 @@
 <script>
 
 new Vue({
-
   el : '#app',
-
+  data : {
+    zipCodeIn : [],
+    dateIn1 : [],
+    dateIn2 : [],
+    dateInJa : [],
+    cardNoIn : [],
+    someCodeIn : []
+  },
   mounted : function() {
   }
 });

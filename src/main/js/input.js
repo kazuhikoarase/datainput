@@ -531,7 +531,9 @@
       $el : $private.$el,
       trigger : $private.trigger.bind($private),
       on : $private.on.bind($private),
-      off : $private.off.bind($private)
+      off : $private.off.bind($private),
+      getValues : $private.getValues.bind($private),
+      setValues : $private.setValues.bind($private)
     };
   };
 
