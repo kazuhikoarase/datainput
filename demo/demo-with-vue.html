@@ -23,17 +23,18 @@
     <td>{{JSON.stringify(zipCodeIn)}}</td></tr>
 
   <tr><td class="header">Date</td>
-    <td><datainput format="0000/00/00" text-align="right" v-model="dateIn1" ></datainput></td>
+    <td><datainput format="0000/00/00" text-align="right" v-model="dateIn1"
+          :field-names="['year','month','date']" ></datainput></td>
     <td>{{JSON.stringify(dateIn1)}}</td></tr>
 
   <tr><td class="header">Date(20XX)</td>
-    <td><datainput format="2099/99/99" text-align="right" section-re="9+" section-input-re="\d+"
-          v-model="dateIn2" >></datainput></td>
+    <td><datainput format="2099/99/99" text-align="right" field-re="9+" field-input-re="\d+"
+          v-model="dateIn2" :field-names="['year','month','date']" ></datainput></td>
     <td>{{JSON.stringify(dateIn2)}}</td></tr>
 
   <tr><td class="header">Date(ja)</td>
     <td><datainput format="0000年00月00日" text-align="right" :num-chars-in-monospace="{ 年:2,月:2,日:2 }"
-          v-model="dateInJa" ></datainput></td>
+          v-model="dateInJa" :field-names="['year','month','date']" ></datainput></td>
     <td>{{JSON.stringify(dateInJa)}}</td></tr>
 
   <tr><td class="header">Card Number</td>
@@ -41,10 +42,10 @@
     <td>{{JSON.stringify(cardNoIn)}}</td></tr>
 
   <tr><td class="header">Some Code(Alp|Num)</td>
-    <td><datainput format="00-0-00-000" section-re="\w+" v-model="someCodeIn" ></datainput></td>
+    <td><datainput format="00-0-00-000" field-re="\w+" v-model="someCodeIn" ></datainput></td>
     <td>{{JSON.stringify(someCodeIn)}}</td></tr>
 
-  <tr><td class="header"></td><td><input type="text" placeholder="input:text" /></td>
+  <tr><td class="header"></td><td><input type="text" placeholder="input:text" /></td></tr>
 </table>
 
 </div>
@@ -55,9 +56,9 @@ new Vue({
   el : '#app',
   data : {
     zipCodeIn : [],
-    dateIn1 : [],
-    dateIn2 : [],
-    dateInJa : [],
+    dateIn1 : {},
+    dateIn2 : {},
+    dateInJa : {},
     cardNoIn : [],
     someCodeIn : []
   },

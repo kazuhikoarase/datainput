@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
 
   var dateIn1 = $d.createInput({ format : '0000/00/00', textAlign : 'right' });
   var dateIn2 = $d.createInput({ format : '2099/99/99', textAlign : 'right',
-    sectionRe : '9+', sectionInputRe : '\\d+' });
+    fieldRe : '9+', fieldInputRe : '\\d+' });
 
   var dateInJa = $d.createInput({
       format : '0000年00月00日',
@@ -21,7 +21,7 @@ window.addEventListener('load', function() {
 
   var cardNoIn = $d.createInput({ format : '0000-0000-0000-0000' });
 
-  var someCodeIn = $d.createInput({ format : 'XX-X-XX-XXX', sectionRe : '\\w+' });
+  var someCodeIn = $d.createInput({ format : 'XX-X-XX-XXX', fieldRe : '\\w+' });
   someCodeIn.on('blur', function(event, detail) {
     console.log(event, detail);
   });
