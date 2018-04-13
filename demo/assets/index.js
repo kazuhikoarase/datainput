@@ -15,9 +15,7 @@ window.addEventListener('load', function() {
 
   var dateInJa = $d.createInput({
       format : '0000年00月00日',
-      getNumCharsInMonospace : function(c) {
-        return '年月日'.indexOf(c) != -1? 2 : 1;
-      },
+      numCharsInMonospace : { 年:2,月:2,日:2 },
       textAlign : 'right'
     });
 

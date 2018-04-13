@@ -24,6 +24,9 @@
   <tr><td class="header">Date(20XX)</td>
     <td><datainput ref="dateIn2" format="2099/99/99" textAlign="right"
           sectionRe="9+" sectionInputRe="\d+">></datainput></td></tr>
+  <tr><td class="header">Date(ja)</td>
+    <td><datainput ref="dateInJa" format="0000年00月00日" textAlign="right"
+          :numCharsInMonospace="{ 年:2,月:2,日:2 }" ></datainput></td></tr>
   <tr><td class="header">Card Number</td>
     <td><datainput ref="cardNoIn" format="0000-0000-0000-0000"></datainput></td></tr>
   <tr><td class="header">Some Code(Alp/Num)</td>
