@@ -1,5 +1,5 @@
 //
-// datainput
+// datainput - input
 //
 // Copyright (c) 2018 Kazuhiko Arase
 //
@@ -20,7 +20,7 @@
   var bgBorderStyle = '1px dotted silver';
 
   var creFgCharElm = function(start) {
-    return util.createElement('span', {
+    return $d.util.createElement('span', {
       props : { textContent : empty },
       style : {
         borderTop : fgBorderStyle,
@@ -31,7 +31,7 @@
   };
 
   var creBgCharElm = function(start) {
-    return util.createElement('span', {
+    return $d.util.createElement('span', {
       props : { textContent : empty },
       style : {
         borderTop : bgBorderStyle,
@@ -42,11 +42,13 @@
   };
 
   var creDelmElm = function(c) {
-    return util.createElement('span', {
+    return $d.util.createElement('span', {
       props : { textContent : c == '\u0020'? empty : c } });
   };
 
   var createInput = function(opts) {
+
+    var util = $d.util;
 
     opts = util.extend({
         format : '00',
@@ -401,7 +403,7 @@
         top : '2px', bottom : '2px', width : '0px',
         borderLeft : '1px solid #000' } });
 
-    var $private = util.extend(createEventTarget(), {
+    var $private = util.extend($d.createEventTarget(), {
       $el : util.createElement('span',
         [ selection ].concat(bgElms).concat([ caret, frame ]),
         { attrs : { 'class' : '${prefix}mono' }, style : {
@@ -548,115 +550,5 @@
   };
 
   $d.createInput = createInput;
-
-  // https://twitter.com/love2chiitan/status/971246677733642240
-
-  var util = function() {
-
-    var parseArguments = function(args) {
-      var children = [];
-      var opts = {};
-      for (var i = 1; i < args.length; i += 1) {
-        var a = args[i];
-        if (typeof a == 'object') {
-          if (typeof a.splice == 'function') {
-            children = a;
-          } else {
-            opts = a;
-          }
-        }
-      }
-      return { children : children, opts : opts };
-    };
-
-    return {
-
-      extend : function() {
-        var o = arguments[0];
-        for (var i = 1; i < arguments.length; i += 1) {
-          var a = arguments[i];
-          for (var k in a) {
-            o[k] = a[k];
-          };
-        }
-        return o;
-      },
-
-      replaceClassNamePrefix : function() {
-        var classNamePrefixRe = /\$\{prefix\}/g;
-        return function(className) {
-          return className.replace(classNamePrefixRe, $d.classNamePrefix);
-        };
-      }(),
-
-      set : function(elm, opts) {
-        if (opts.attrs) {
-          for (var k in opts.attrs) {
-            var v = opts.attrs[k];
-            var t = typeof v;
-            if (t == 'number' || t == 'boolean') {
-              v = '' + v;
-            } else if (t == 'undefined') {
-              v = '';
-            }
-            if (typeof v != 'string') {
-              throw 'bad attr type for ' + k + ':' + (typeof v);
-            }
-            if (k == 'class') {
-              v = this.replaceClassNamePrefix(v);
-            }
-            elm.setAttribute(k, v);
-          }
-        }
-        if (opts.props) {
-          for (var k in opts.props) {
-            elm[k] = opts.props[k];
-          }
-        }
-        if (opts.style) {
-          for (var k in opts.style) {
-            elm.style[k] = opts.style[k] || '';
-          }
-        }
-        if (opts.on) {
-          for (var k in opts.on) {
-            elm.addEventListener(k, opts.on[k]);
-          }
-        }
-        return elm;
-      },
-
-      createElement : function(tagName) {
-        var args = parseArguments(arguments);
-        var elm = document.createElement(tagName);
-        args.children.forEach(function(child) { elm.appendChild(child); });
-        return this.set(elm, args.opts);
-      }
-    };
-  }();
-
-  var createEventTarget = function() {
-    var map = {};
-    var listeners = function(type) { return map[type] || (map[type] = []); };
-    return {
-      trigger : function(type, detail) {
-        var ctx = this;
-        listeners(type).forEach(function(listener) {
-          listener.call(ctx, { type : type }, detail);
-        });
-        return this;
-      },
-      on : function(type, listener) {
-        listeners(type).push(listener);
-        return this;
-      },
-      off : function(type, listener) {
-        map[type] = listeners(type).filter(function(l) {
-          return listener != l;
-        });
-        return this;
-      }
-    };
-  };
 
 }(window.datainput || (window.datainput = {}) );
