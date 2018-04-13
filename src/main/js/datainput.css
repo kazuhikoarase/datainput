@@ -11,7 +11,7 @@
 
 .datainput-base {
   /* font-family must be monospace */
-  font-family : "ＭＳ ゴシック", monospace;
+  font-family : "ＭＳ ゴシック", "Osaka-Mono", "Menlo", monospace;
 }
 
 .datainput-char {
