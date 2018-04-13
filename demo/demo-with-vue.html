@@ -29,8 +29,9 @@
           :num-chars-in-monospace="{ 年:2,月:2,日:2 }" ></datainput></td></tr>
   <tr><td class="header">Card Number</td>
     <td><datainput ref="cardNoIn" format="0000-0000-0000-0000"></datainput></td></tr>
-  <tr><td class="header">Some Code(Alp/Num)</td>
-    <td><datainput ref="someCodeIn" format="00-0-00-000"></datainput></td></tr>
+  <tr><td class="header">Some Code(Alp|Num)</td>
+    <td><datainput ref="someCodeIn" format="00-0-00-000"
+          section-re="\w+"></datainput></td></tr>
   <tr><td class="header"></td><td><input type="text" placeholder="input:text" /></td>
 </table>
 
