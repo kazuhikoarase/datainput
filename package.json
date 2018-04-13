@@ -1,6 +1,6 @@
 {
   "name": "datainput",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Formatted Data Input Library in JavaScript.",
   "author": "Kazuhiko Arase",
   "main": "lib/datainput.js",
