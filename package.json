@@ -11,10 +11,21 @@
   "bugs": {
     "url": "https://github.com/kazuhikoarase/datainput/issues"
   },
-  "keywords": [ "data", "input", "format",
-    "zip", "postal", "code",
-    "date", "card", "credit", "number",
-    "telephone", "component", "vue" ],
+  "keywords": [
+    "data",
+    "input",
+    "format",
+    "zip",
+    "postal",
+    "code",
+    "date",
+    "card",
+    "credit",
+    "number",
+    "telephone",
+    "component",
+    "vue"
+  ],
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.0.0",

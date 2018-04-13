@@ -9,9 +9,17 @@
  *  http://www.opensource.org/licenses/mit-license.php
  */
 
-.datainput-mono {
+.datainput-base {
   /* font-family must be monospace */
   font-family : "ＭＳ ゴシック", monospace;
+}
+
+.datainput-char {
+  border : 1px dotted rgba(0,0,0,0.2);
+}
+
+.datainput-caret {
+  border-left : 1px solid #000;
 }
 
 .datainput-selection {
