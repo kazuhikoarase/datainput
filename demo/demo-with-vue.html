@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<link rel="stylesheet" href="../lib/datainput.css" type="text/css" />
+<link rel="stylesheet" href="assets/index.css" type="text/css" />
+<script src="../lib/datainput.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="../lib/vue-datainput.js"></script>
+</head>
+<body>
+
+<h1>With Vue.js</h1>
+
+<div id="app">
+
+<table>
+  <tr><td class="header"></td><td><input type="text" placeholder="input:text" /></td></tr>
+  <tr><td class="header">Zip (Postal) Code</td>
+    <td><datainput ref="zipCodeIn" format="00000"></datainput></td></tr>
+  <tr><td class="header">Date</td>
+    <td><datainput ref="dateIn1" format="0000/00/00"></datainput></td></tr>
+  <tr><td class="header">Date(20XX)</td>
+    <td><datainput ref="dateIn2" format="2099/99/99"
+          sectionRe="9+" sectionInputRe="\d+">></datainput></td></tr>
+  <tr><td class="header">Card Number</td>
+    <td><datainput ref="cardNoIn" format="0000-0000-0000-0000"></datainput></td></tr>
+  <tr><td class="header">Some Code(Alp/Num)</td>
+    <td><datainput ref="someCodeIn" format="00-0-00-000"></datainput></td></tr>
+  <tr><td class="header"></td><td><input type="text" placeholder="input:text" /></td>
+</table>
+
+</div>
+
+<script>
+
+new Vue({
+
+  el : '#app',
+
+  mounted : function() {
+  }
+});
+
+</script>
+
+</body>
+</html>

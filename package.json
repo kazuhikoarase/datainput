@@ -1,6 +1,6 @@
 {
   "name": "datainput",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Formatted Data Input Library in JavaScript.",
   "author": "Kazuhiko Arase",
   "main": "lib/datainput.js",
@@ -14,7 +14,7 @@
   "keywords": [ "data", "input", "format",
     "zip", "postal", "code",
     "date", "card", "credit", "number",
-    "telephone", "library" ],
+    "telephone", "component", "vue" ],
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.0.0",
